@@ -322,43 +322,88 @@
             display: none !important;
         }
 
-        body > section:nth-of-type(3) {
-            position: relative;
+        .adic-about {
             overflow: hidden;
+            padding: 0 1.5rem 7rem !important;
+            background: #fff !important;
         }
 
-        body > section:nth-of-type(3)::before {
-            position: absolute;
-            top: 3.5rem;
-            left: 50%;
-            width: 110px;
-            height: 110px;
-            content: "";
-            border: 16px solid var(--adic-cream);
-            border-radius: 50%;
-            z-index: 0;
-            transform: translateX(-50%);
+        .adic-about__frame {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 5rem 2.5rem 5.625rem;
+            background: var(--adic-blush);
+            box-shadow: 24px 24px 0 var(--adic-orange);
         }
 
-        body > section:nth-of-type(3) > div {
-            position: relative;
-            z-index: 1;
+        .adic-about__heading {
+            margin-bottom: 2.8rem;
+            text-align: center;
         }
 
-        body > section:nth-of-type(3) h2 {
-            color: var(--adic-orange) !important;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(3.5rem, 9vw, 7.25rem) !important;
-            font-style: normal !important;
-            letter-spacing: .08em !important;
-            line-height: 1 !important;
+        .adic-about__heading span {
+            display: block;
+            color: var(--adic-orange);
+            font-family: 'Oswald', sans-serif;
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .18em;
         }
 
-        body > section:nth-of-type(3) .underline {
-            color: var(--adic-ink) !important;
-            font-style: normal !important;
-            font-weight: 700 !important;
-            text-decoration-color: var(--adic-orange) !important;
+        .adic-about__heading h2 {
+            margin-top: .75rem;
+            color: var(--adic-orange);
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            line-height: 1.5;
+        }
+
+        .adic-about__lead-gallery,
+        .adic-about__gallery {
+            max-width: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+            display: grid;
+        }
+
+        .adic-about__lead-gallery {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .adic-about__lead-gallery img {
+            display: block;
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        .adic-about__copy {
+            max-width: 1000px;
+            margin: 2.8rem auto 0;
+            color: var(--adic-ink);
+            font-size: 16px;
+            letter-spacing: .02em;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .adic-about__copy p + p {
+            margin-top: 1.5rem;
+        }
+
+        .adic-about__gallery {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            margin-top: 2.8rem;
+        }
+
+        .adic-about__gallery img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
         }
 
         .adic-features {
@@ -461,42 +506,6 @@
             margin-top: 1rem;
         }
 
-        .adic-features__value {
-            max-width: 900px;
-            margin: 1.5rem auto 0;
-        }
-
-        .adic-features .bg-\[\#333\] {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0 44px 0 44px;
-            background: var(--adic-orange) !important;
-            box-shadow: 0 22px 48px rgba(230, 72, 0, .2) !important;
-        }
-
-        .adic-features .bg-\[\#333\]::after {
-            position: absolute;
-            right: -4rem;
-            bottom: -5rem;
-            width: 220px;
-            height: 220px;
-            content: "";
-            border: 40px solid rgba(255, 255, 255, .12);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .adic-features .bg-\[\#333\] > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .adic-features .bg-\[\#333\] h3,
-        .adic-features .bg-\[\#333\] p,
-        .adic-features .bg-\[\#333\] button {
-            color: #fff !important;
-        }
 
         body > section:nth-of-type(5) {
             border: 0 !important;
@@ -641,16 +650,6 @@
                 margin-top: 2.5rem;
             }
 
-            body > section:nth-of-type(3) h2 {
-                font-size: 4rem !important;
-                letter-spacing: .05em !important;
-            }
-
-            body > section:nth-of-type(3) .underline {
-                font-size: 1.1rem !important;
-                line-height: 1.9 !important;
-            }
-
             section h2,
             section h3 {
                 line-height: 1.55 !important;
@@ -664,6 +663,48 @@
             .grid.md\:grid-cols-3 > .group .flex > span:last-child {
                 max-width: 68%;
                 line-height: 1.6;
+            }
+
+            .adic-about {
+                padding: 0 10px 4rem !important;
+            }
+
+            .adic-about__frame {
+                padding: 2.8rem 1rem;
+                box-shadow: 10px 15px 0 var(--adic-orange);
+            }
+
+            .adic-about__heading {
+                margin-bottom: 1.8rem;
+            }
+
+            .adic-about__heading h2 {
+                font-size: 28px;
+            }
+
+            .adic-about__lead-gallery {
+                gap: 6px;
+            }
+
+            .adic-about__lead-gallery img {
+                height: 150px;
+            }
+
+            .adic-about__copy {
+                margin-top: 1.8rem;
+                font-size: 14px;
+                line-height: 1.9;
+                text-align: left;
+            }
+
+            .adic-about__copy br {
+                display: none;
+            }
+
+            .adic-about__gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+                margin-top: 1.8rem;
             }
 
             .adic-features {
@@ -707,15 +748,6 @@
                 background: linear-gradient(90deg, transparent 0%, var(--adic-orange) 5%, var(--adic-orange) 95%, transparent 100%);
             }
 
-            .adic-features__value {
-                margin: 0 1.5rem;
-            }
-
-            .adic-features .bg-\[\#333\] {
-                padding: 2rem !important;
-                border-radius: 0 28px 0 28px;
-            }
-
             body > section:nth-of-type(5) .grid > div {
                 padding: 2rem !important;
             }
@@ -742,9 +774,6 @@
                 font-size: 24px !important;
             }
 
-            body > section:nth-of-type(3) h2 {
-                font-size: 3.25rem !important;
-            }
         }
     </style>
 </head>
@@ -938,34 +967,53 @@
         </div>
     </section>
 
-    <!-- Concept Text Section -->
-    <section id="concept" class="py-24 px-6 bg-white">
-        <div class="max-w-[800px] mx-auto text-center space-y-12">
-            <div class="space-y-2">
-                <span class="text-[14px] tracking-[0.5em] text-gray-300 uppercase font-sans block mb-2">About adic</span>
-                <h2 class="text-4xl font-light tracking-[0.2em] text-slate-800 uppercase italic">adic</h2>
-                <p class="text-[12px] tracking-[0.3em] text-gray-400 uppercase font-sans font-bold">アディックとは？</p>
+    <!-- About adic -->
+    <section id="concept" class="adic-about">
+        <div class="adic-about__frame">
+            <div class="adic-about__heading">
+                <span>ADIC</span>
+                <h2>アディックとは？</h2>
             </div>
-            
-            <div class="space-y-12">
-                <p class="text-xl md:text-2xl font-light italic text-slate-400 tracking-widest underline decoration-amber-100 underline-offset-8 leading-relaxed">
-                    「きれいだな」と思える家も、ずっと。
+
+            <div class="adic-about__lead-gallery">
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=85&w=1200"
+                      alt="アディックが提案する開放的な邸宅"
+                    >
+                </figure>
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=85&w=1200"
+                      alt="光と素材を生かしたアディックの室内"
+                    >
+                </figure>
+            </div>
+
+            <div class="adic-about__copy">
+                <p>
+                    「きれいだな」と思える瞬間を、ずっと。<br>
+                    アディックは、東洋コーポレーションが手掛けるデザイナーズ住宅ブランドです。<br>
+                    私たちは、単に新しい家を建てるのではなく、<br>
+                    住む人が心から満足できる住まいを創造することを目指しています。
                 </p>
-                <div class="space-y-10 text-sm md:text-base text-gray-500 leading-loose tracking-[0.15em] font-sans font-light text-left md:text-center">
-                    <p>
-                        アディックは、東洋コーポレーションが手掛けるデザイナーズ住宅ブランドです。<br>
-                        私たちは、単に「新しい家を建てる」のではなく、<br>
-                        住む人が心から満足できる「人生の舞台」を創造することを目指しています。
-                    </p>
-                    <p>
-                        設計で大切なのは、見た目の美しさだけでなく、目に見えない光と風の通り道、<br>
-                        そして家族の成長に合わせた可変性へのこだわりです。
-                    </p>
-                    <p>
-                        「憧れだな」と思う心地よさと、ずっと続く資産価値。<br>
-                        それがアディックの住まいです。
-                    </p>
-                </div>
+                <p>
+                    設計で大切なのは、見た目の美しさだけでなく、<br>
+                    目に見えない光と風の通り道、そして暮らしの変化を見据えた細部へのこだわりです。
+                </p>
+                <p>
+                    「きれいだな」と思う心地よさと、ずっと続く安心感。<br>
+                    それがアディックの住まいです。
+                </p>
+            </div>
+
+            <div class="adic-about__gallery">
+                <figure><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=700" alt="モダンな外観"></figure>
+                <figure><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=700" alt="明るいリビング"></figure>
+                <figure><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=700" alt="上質なダイニング"></figure>
+                <figure><img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80&w=700" alt="落ち着いた居室"></figure>
+                <figure><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=700" alt="開放感のある住空間"></figure>
+                <figure><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=700" alt="素材を生かしたインテリア"></figure>
             </div>
         </div>
     </section>
@@ -1023,18 +1071,6 @@
             </article>
         </div>
 
-        <div class="adic-features__value">
-            <div class="bg-[#333] p-12 text-white space-y-8 shadow-sm text-left">
-                <h3 class="text-2xl font-bold tracking-[0.2em] text-left uppercase font-serif italic">Lasting Value</h3>
-                <h3 class="text-2xl font-bold tracking-[0.2em] text-left">長く住み続けられる「確かな価値」</h3>
-                <p class="text-sm leading-loose opacity-80 font-light tracking-[0.1em] font-sans text-left">
-                    「きれいが続く、ずっと快適な住まい」。当社の物件は見た目だけでなく、高品質を保証する独自の検査体制を構築しております。長く安心して住める品質とメンテナンス性を備えています。
-                </p>
-                <button class="flex items-center text-[10px] tracking-[0.4em] font-bold uppercase border-b border-white pb-2 w-max hover:opacity-50 transition-opacity font-sans">
-                    Performance Details <i data-lucide="arrow-right" class="ml-2 w-3.5 h-3.5"></i>
-                </button>
-            </div>
-        </div>
     </section>
 
     <!-- Trust & Insurance -->
