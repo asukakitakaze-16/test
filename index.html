@@ -361,38 +361,112 @@
             text-decoration-color: var(--adic-orange) !important;
         }
 
-        body > section:nth-of-type(4) {
-            background: #F7F7F7 !important;
+        .adic-features {
+            padding: 0 0 7rem !important;
+            background: var(--adic-cream) !important;
         }
 
-        body > section:nth-of-type(4) .space-y-1 {
-            position: relative;
+        .adic-features__heading {
+            padding: 4.5rem 1.5rem 3.5rem;
+            text-align: center;
         }
 
-        body > section:nth-of-type(4) .space-y-1::before {
-            position: absolute;
-            z-index: 2;
-            top: -2.4rem;
-            left: -1rem;
-            padding: .9rem 1.4rem;
-            content: "DESIGN & QUALITY";
-            color: #fff;
+        .adic-features__heading span,
+        .adic-philosophy__body > span {
+            display: block;
+            color: var(--adic-orange);
             font-family: 'Oswald', sans-serif;
-            font-size: .72rem;
-            font-weight: 600;
-            letter-spacing: .28em;
-            background: var(--adic-orange);
+            font-size: .85rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
         }
 
-        body > section:nth-of-type(4) img {
-            filter: saturate(.88) contrast(1.02);
+        .adic-features__heading h2 {
+            margin-top: .8rem;
+            color: var(--adic-orange);
+            font-size: 40px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            line-height: 1.5;
         }
 
-        body > section:nth-of-type(4) h3.border-l-4 {
-            border-color: var(--adic-orange) !important;
+        .adic-features__list {
+            max-width: 1280px;
+            margin: 0 auto;
         }
 
-        body > section:nth-of-type(4) .bg-\[\#333\] {
+        .adic-philosophy {
+            background: var(--adic-cream);
+        }
+
+        .adic-philosophy + .adic-philosophy {
+            margin-top: 1rem;
+        }
+
+        .adic-philosophy figure {
+            overflow: hidden;
+            width: 100%;
+            margin: 0;
+        }
+
+        .adic-philosophy figure img {
+            display: block;
+            width: 100%;
+            height: clamp(340px, 43vw, 560px);
+            object-fit: cover;
+            filter: saturate(.9) contrast(1.02);
+        }
+
+        .adic-philosophy__body {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 4rem 2rem 5.5rem;
+            text-align: center;
+        }
+
+        .adic-philosophy__body h3 {
+            margin-top: .8rem;
+            color: var(--adic-orange);
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            line-height: 1.6;
+        }
+
+        .adic-philosophy__body p {
+            margin-top: 2rem;
+            color: var(--adic-ink);
+            font-size: 16px;
+            letter-spacing: .03em;
+            line-height: 2;
+        }
+
+        .adic-philosophy__body ul {
+            max-width: 820px;
+            margin: 2.5rem auto 0;
+        }
+
+        .adic-philosophy__body li {
+            padding: 1rem 2rem;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .02em;
+            line-height: 1.65;
+            background: linear-gradient(90deg, transparent 0%, var(--adic-orange) 12%, var(--adic-orange) 88%, transparent 100%);
+        }
+
+        .adic-philosophy__body li + li {
+            margin-top: 1rem;
+        }
+
+        .adic-features__value {
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+        }
+
+        .adic-features .bg-\[\#333\] {
             position: relative;
             overflow: hidden;
             border-radius: 0 44px 0 44px;
@@ -400,7 +474,7 @@
             box-shadow: 0 22px 48px rgba(230, 72, 0, .2) !important;
         }
 
-        body > section:nth-of-type(4) .bg-\[\#333\]::after {
+        .adic-features .bg-\[\#333\]::after {
             position: absolute;
             right: -4rem;
             bottom: -5rem;
@@ -413,14 +487,14 @@
             pointer-events: none;
         }
 
-        body > section:nth-of-type(4) .bg-\[\#333\] > * {
+        .adic-features .bg-\[\#333\] > * {
             position: relative;
             z-index: 1;
         }
 
-        body > section:nth-of-type(4) .bg-\[\#333\] h3,
-        body > section:nth-of-type(4) .bg-\[\#333\] p,
-        body > section:nth-of-type(4) .bg-\[\#333\] button {
+        .adic-features .bg-\[\#333\] h3,
+        .adic-features .bg-\[\#333\] p,
+        .adic-features .bg-\[\#333\] button {
             color: #fff !important;
         }
 
@@ -577,14 +651,6 @@
                 line-height: 1.9 !important;
             }
 
-            body > section:nth-of-type(4) .space-y-1::before {
-                top: -1.2rem;
-                left: 0;
-                padding: .65rem .9rem;
-                font-size: .62rem;
-                letter-spacing: .18em;
-            }
-
             section h2,
             section h3 {
                 line-height: 1.55 !important;
@@ -600,7 +666,52 @@
                 line-height: 1.6;
             }
 
-            body > section:nth-of-type(4) .bg-\[\#333\] {
+            .adic-features {
+                padding-bottom: 4.5rem !important;
+            }
+
+            .adic-features__heading {
+                padding: 3.5rem 1.5rem 2.75rem;
+            }
+
+            .adic-features__heading h2 {
+                font-size: 28px;
+            }
+
+            .adic-philosophy figure img {
+                height: 250px;
+            }
+
+            .adic-philosophy__body {
+                padding: 3rem 1.5rem 4rem;
+            }
+
+            .adic-philosophy__body h3 {
+                font-size: 23px;
+            }
+
+            .adic-philosophy__body p {
+                margin-top: 1.5rem;
+                font-size: 14px;
+                line-height: 1.9;
+            }
+
+            .adic-philosophy__body ul {
+                margin-top: 2rem;
+            }
+
+            .adic-philosophy__body li {
+                padding: .85rem 1rem;
+                font-size: 12px;
+                line-height: 1.7;
+                background: linear-gradient(90deg, transparent 0%, var(--adic-orange) 5%, var(--adic-orange) 95%, transparent 100%);
+            }
+
+            .adic-features__value {
+                margin: 0 1.5rem;
+            }
+
+            .adic-features .bg-\[\#333\] {
                 padding: 2rem !important;
                 border-radius: 0 28px 0 28px;
             }
@@ -859,75 +970,69 @@
         </div>
     </section>
 
-    <!-- Features (Vertical Layout) -->
-    <section class="py-20 bg-[#f9f9f9] px-6">
-        <div class="max-w-[1200px] mx-auto space-y-24">
-            <!-- Images Grid -->
-            <div class="space-y-1">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                    <div class="relative group overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" class="w-full h-80 object-cover" alt="interior 1">
-                        <button onclick="downloadImage('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000', 'adic-interior-1.jpg')" class="absolute top-4 right-4 bg-white/80 p-2 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                    <div class="relative group overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000" class="w-full h-80 object-cover" alt="interior 2">
-                        <button onclick="downloadImage('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1000', 'adic-interior-2.jpg')" class="absolute top-4 right-4 bg-white/80 p-2 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="relative group overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556912177-c54030639a6d?auto=format&fit=crop&q=80&w=2000" class="w-full h-80 object-cover" alt="interior 3">
-                    <button onclick="downloadImage('https://images.unsplash.com/photo-1556912177-c54030639a6d?auto=format&fit=crop&q=80&w=2000', 'adic-interior-3.jpg')" class="absolute top-4 right-4 bg-white/80 p-2 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity">
-                        <i data-lucide="download" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
+    <!-- Features -->
+    <section class="adic-features">
+        <div class="adic-features__heading">
+            <span>ADIC</span>
+            <h2>アディックの特徴</h2>
+        </div>
 
-            <!-- Features Text -->
-            <div class="max-w-[900px] mx-auto space-y-20 text-left">
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-sans font-bold text-left block">Philosophy 01</span>
-                        <h3 class="text-2xl font-bold border-l-4 border-amber-600 pl-4 tracking-widest text-left">美しさと心地よさへのこだわり</h3>
-                    </div>
-                    <p class="text-sm md:text-base leading-loose text-gray-600 font-sans tracking-widest text-left">
-                        「きれいだな」と思える事は、住む人の心を満たします。アディックは見た目の美しさだけでなく、住み心地にもこだわっています。
+        <div class="adic-features__list">
+            <article class="adic-philosophy">
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=85&w=1800"
+                      alt="美しさと心地よさを備えたアディックの住空間"
+                    >
+                </figure>
+                <div class="adic-philosophy__body">
+                    <span>Philosophy 01</span>
+                    <h3>美しさと心地よさへのこだわり</h3>
+                    <p>
+                        「きれいだな」と思える家は、住む人の心を満たします。<br>
+                        アディックは見た目の美しさだけでなく、住み心地にもこだわっています。
                     </p>
-                    <ul class="text-[12px] md:text-[13px] space-y-3 text-gray-500 font-sans tracking-widest list-disc pl-5 leading-relaxed text-left">
-                        <li>広がりや明るさを追求した開放的な空間を目指した設計</li>
-                        <li>物件に合わせた最新設備とデザイン性を両立したスタイリッシュな内装</li>
-                        <li>細部の仕上げまで丁寧に施工し、まるで芸術品のようなクオリティを実現</li>
+                    <ul>
+                        <li>広がりや明るさを追求した、開放的な空間を目指した設計</li>
+                        <li>最新設備とデザイン性を両立した、スタイリッシュな内装</li>
+                        <li>細部まで丁寧に仕上げる、上質で確かなクオリティ</li>
                     </ul>
                 </div>
+            </article>
 
-                <div class="space-y-6">
-                    <div class="space-y-2">
-                        <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-sans font-bold text-left block">Philosophy 02</span>
-                        <h3 class="text-2xl font-bold border-l-4 border-amber-600 pl-4 tracking-widest text-left">ライフスタイルに寄り添う設計</h3>
-                    </div>
-                    <p class="text-sm md:text-base leading-loose text-gray-600 font-sans tracking-widest text-left">
-                        「自分らしく快適に暮らせる家」をカタチに。アディックは、住む人の暮らしに寄り添った設計やデザインにこだわります。
+            <article class="adic-philosophy">
+                <figure>
+                    <img
+                      src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=85&w=1800"
+                      alt="暮らしやすい動線を考えたアディックのリビング"
+                    >
+                </figure>
+                <div class="adic-philosophy__body">
+                    <span>Philosophy 02</span>
+                    <h3>ライフスタイルに寄り添う設計</h3>
+                    <p>
+                        「自分らしく快適に暮らせる家」をカタチに。<br>
+                        アディックは、住む人の暮らしに寄り添った設計とデザインを大切にしています。
                     </p>
-                    <ul class="text-[12px] md:text-[13px] space-y-3 text-gray-500 font-sans tracking-widest list-disc pl-5 leading-relaxed text-left">
-                        <li>将来の家族構成の変化を見据えた、柔軟な間取りの提案</li>
-                        <li>家事動線や生活動線を徹底的に分析した、ストレスフリーな住環境</li>
-                        <li>厳選された素材と照明設計による、五感で感じる心地よさの演出</li>
+                    <ul>
+                        <li>将来の家族構成の変化を見据えた、柔軟な間取り</li>
+                        <li>家事動線と生活動線を考え抜いた、ストレスの少ない住環境</li>
+                        <li>素材と照明にこだわり、五感で心地よさを感じる空間を演出</li>
                     </ul>
                 </div>
+            </article>
+        </div>
 
-                <div class="bg-[#333] p-12 text-white space-y-8 shadow-sm text-left">
-                    <h3 class="text-2xl font-bold tracking-[0.2em] text-left uppercase font-serif italic">Lasting Value</h3>
-                    <h3 class="text-2xl font-bold tracking-[0.2em] text-left">長く住み続けられる「確かな価値」</h3>
-                    <p class="text-sm leading-loose opacity-80 font-light tracking-[0.1em] font-sans text-left">
-                        「きれいが続く、ずっと快適な住まい」。当社の物件は見た目だけでなく、高品質を保証する独自の検査体制を構築しております。長く安心して住める品質とメンテナンス性を備えています。
-                    </p>
-                    <button class="flex items-center text-[10px] tracking-[0.4em] font-bold uppercase border-b border-white pb-2 w-max hover:opacity-50 transition-opacity font-sans">
-                        Performance Details <i data-lucide="arrow-right" class="ml-2 w-3.5 h-3.5"></i>
-                    </button>
-                </div>
+        <div class="adic-features__value">
+            <div class="bg-[#333] p-12 text-white space-y-8 shadow-sm text-left">
+                <h3 class="text-2xl font-bold tracking-[0.2em] text-left uppercase font-serif italic">Lasting Value</h3>
+                <h3 class="text-2xl font-bold tracking-[0.2em] text-left">長く住み続けられる「確かな価値」</h3>
+                <p class="text-sm leading-loose opacity-80 font-light tracking-[0.1em] font-sans text-left">
+                    「きれいが続く、ずっと快適な住まい」。当社の物件は見た目だけでなく、高品質を保証する独自の検査体制を構築しております。長く安心して住める品質とメンテナンス性を備えています。
+                </p>
+                <button class="flex items-center text-[10px] tracking-[0.4em] font-bold uppercase border-b border-white pb-2 w-max hover:opacity-50 transition-opacity font-sans">
+                    Performance Details <i data-lucide="arrow-right" class="ml-2 w-3.5 h-3.5"></i>
+                </button>
             </div>
         </div>
     </section>
