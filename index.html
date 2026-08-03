@@ -146,17 +146,24 @@
         .site-header__nav > a,
         .brand-switcher > button {
             display: flex;
-            min-width: 180px;
+            min-width: 0;
             align-items: center;
             justify-content: center;
             gap: .55rem;
-            padding: 1rem 2rem;
+            padding: 1rem .55rem;
             border-left: 1px solid var(--adic-orange);
             color: var(--adic-ink);
-            font-size: .9rem;
+            font-size: clamp(.68rem, .92vw, 1rem);
             font-weight: 700;
-            letter-spacing: .08em;
+            letter-spacing: .02em;
+            white-space: nowrap;
             background: #fff;
+        }
+
+        .site-header__nav > a,
+        .brand-switcher {
+            flex: 1 1 0;
+            min-width: 0;
         }
 
         .site-header__nav > a:last-child {
@@ -176,6 +183,7 @@
 
         .brand-switcher > button {
             height: 100%;
+            width: 100%;
         }
 
         .brand-switcher > button svg {
@@ -969,7 +977,7 @@
         </div>
 
         <nav class="site-header__nav" aria-label="メインナビゲーション">
-            <a href="#about">私たちについて</a>
+            <a href="https://www.ty-corp.jp/about-us/">私たちについて</a>
             <div class="brand-switcher">
                 <button id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu-panel">
                     住宅ブランド <i data-lucide="chevron-down"></i>
@@ -987,13 +995,18 @@
                 </div>
             </div>
             <a href="#properties">物件情報</a>
-            <a href="#concept">アディックとは</a>
-            <a href="#company">会社案内</a>
+            <a href="https://www.ty-corp.jp/service/">事業内容</a>
+            <a href="https://www.ty-corp.jp/consulting/">買取の無料相談</a>
+            <a href="https://www.ty-corp.jp/recruit/">採用情報</a>
+            <a href="https://www.ty-corp.jp/news/">お知らせ</a>
+            <a href="https://www.ty-corp.jp/company/">会社案内</a>
+            <a href="https://www.ty-corp.jp/ir/">IR情報</a>
+            <a href="https://www.ty-corp.jp/ipo/">上場のご報告</a>
         </nav>
     </header>
 
     <nav id="mobile-menu" aria-label="モバイルナビゲーション">
-        <a href="#about">私たちについて</a>
+        <a href="https://www.ty-corp.jp/about-us/">私たちについて</a>
         <div class="mobile-brand">
             <button class="mobile-brand__toggle" id="mobile-brand-toggle" type="button" aria-expanded="false" aria-controls="mobile-brand-panel">
                 住宅ブランド <i data-lucide="chevron-down"></i>
@@ -1010,9 +1023,13 @@
             </div>
         </div>
         <a href="#properties">物件情報</a>
-        <a href="#concept">アディックとは</a>
-        <a href="#company">会社案内</a>
-        <a href="#contact">資料請求・お問い合わせ</a>
+        <a href="https://www.ty-corp.jp/service/">事業内容</a>
+        <a href="https://www.ty-corp.jp/consulting/">買取の無料相談</a>
+        <a href="https://www.ty-corp.jp/recruit/">採用情報</a>
+        <a href="https://www.ty-corp.jp/news/">お知らせ</a>
+        <a href="https://www.ty-corp.jp/company/">会社案内</a>
+        <a href="https://www.ty-corp.jp/ir/">IR情報</a>
+        <a href="https://www.ty-corp.jp/ipo/">上場のご報告</a>
     </nav>
 
     <figure class="brand-banner" aria-label="adicブランド">
