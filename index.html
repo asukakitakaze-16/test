@@ -55,71 +55,202 @@
                 border-color .25s ease, opacity .25s ease, transform .25s ease;
         }
 
-        header {
-            border: 0 !important;
-            box-shadow: 0 1px 0 rgba(56, 56, 56, .08);
+        .site-header {
+            position: sticky;
+            z-index: 50;
+            top: 0;
+            border-bottom: 1px solid var(--adic-orange);
+            background: #fff;
+            box-shadow: 0 4px 16px rgba(56, 56, 56, .08);
         }
 
-        header > div {
-            max-width: 1440px !important;
-            min-height: 84px;
+        .site-header__top {
+            display: flex;
+            min-height: 104px;
+            align-items: stretch;
+            justify-content: space-between;
         }
 
-        header h1 {
-            color: var(--adic-orange) !important;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem !important;
-            font-weight: 700 !important;
-            letter-spacing: .06em !important;
+        .site-header__logo {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+            padding: 1rem 3rem;
         }
 
-        header p {
-            color: var(--adic-ink) !important;
-            letter-spacing: .22em !important;
+        .site-header__logo img {
+            display: block;
+            width: min(360px, 100%);
+            height: auto;
         }
 
-        header nav a {
-            position: relative;
-            padding: 2rem .1rem;
+        .site-header__actions {
+            display: flex;
+            flex: 0 0 auto;
         }
 
-        header nav a::after {
-            position: absolute;
-            right: 0;
-            bottom: 1.35rem;
-            left: 0;
-            height: 2px;
-            content: "";
+        .site-header__phone,
+        .site-header__contact {
+            display: flex;
+            align-items: center;
+            color: #fff;
             background: var(--adic-orange);
-            transform: scaleX(0);
-            transform-origin: right;
+        }
+
+        .site-header__phone {
+            gap: 1.5rem;
+            padding: 1rem 2rem;
+            border-right: 1px solid rgba(255, 255, 255, .45);
+        }
+
+        .site-header__phone strong {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.9rem;
+            letter-spacing: .05em;
+            white-space: nowrap;
+        }
+
+        .site-header__phone span {
+            font-size: .65rem;
+            font-weight: 500;
+            letter-spacing: .08em;
+            line-height: 1.7;
+            white-space: nowrap;
+        }
+
+        .site-header__contact {
+            min-width: 220px;
+            justify-content: center;
+            gap: .7rem;
+            padding: 1rem 1.5rem;
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+        }
+
+        .site-header__phone:hover,
+        .site-header__contact:hover {
+            color: #fff;
+            background: var(--adic-orange-dark);
+        }
+
+        .site-header__nav {
+            display: flex;
+            min-height: 68px;
+            align-items: stretch;
+            justify-content: center;
+            border-top: 1px solid #eee;
+            background: #fff;
+        }
+
+        .site-header__nav > a,
+        .brand-switcher > button {
+            display: flex;
+            min-width: 180px;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            padding: 1rem 2rem;
+            border-left: 1px solid var(--adic-orange);
+            color: var(--adic-ink);
+            font-size: .9rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            background: #fff;
+        }
+
+        .site-header__nav > a:last-child {
+            border-right: 1px solid var(--adic-orange);
+        }
+
+        .site-header__nav > a:hover,
+        .brand-switcher > button:hover,
+        .brand-switcher > button[aria-expanded="true"] {
+            color: #fff;
+            background: var(--adic-orange);
+        }
+
+        .brand-switcher {
+            position: relative;
+        }
+
+        .brand-switcher > button {
+            height: 100%;
+        }
+
+        .brand-switcher > button svg {
+            width: 16px;
             transition: transform .25s ease;
         }
 
-        header nav a:hover {
-            color: var(--adic-orange) !important;
+        .brand-switcher > button[aria-expanded="true"] svg {
+            transform: rotate(180deg);
         }
 
-        header nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
+        .brand-switcher__panel {
+            position: absolute;
+            z-index: 60;
+            top: 100%;
+            left: 50%;
+            width: 420px;
+            padding: 1.25rem;
+            background: #fff;
+            box-shadow: 0 18px 38px rgba(56, 56, 56, .18);
+            transform: translateX(-50%);
         }
 
-        header a.bg-\[\#333\] {
-            border-radius: 999px !important;
-            background: var(--adic-orange) !important;
-            box-shadow: 0 10px 24px rgba(230, 72, 0, .2);
+        .brand-switcher__panel[hidden],
+        .mobile-brand__panel[hidden] {
+            display: none;
         }
 
-        header a.bg-\[\#333\]:hover {
-            background: var(--adic-orange-dark) !important;
-            transform: translateY(-2px);
+        .brand-switcher__panel > p {
+            margin: 0 0 .8rem;
+            color: var(--adic-muted);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .brand-switcher__panel a,
+        .mobile-brand__panel a {
+            display: grid;
+            grid-template-columns: 105px 1fr;
+            align-items: center;
+            padding: 1rem;
+            border-top: 1px solid var(--adic-line);
+        }
+
+        .brand-switcher__panel a strong,
+        .mobile-brand__panel a strong {
+            color: var(--adic-orange);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .brand-switcher__panel a span,
+        .mobile-brand__panel a span {
+            color: var(--adic-ink);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+
+        .brand-switcher__panel a:hover {
+            background: var(--adic-blush);
+        }
+
+        #menu-toggle {
+            display: none;
+            margin-right: 1.25rem;
         }
 
         #mobile-menu {
             position: fixed;
             z-index: 45;
-            top: 84px;
+            top: 72px;
             right: 0;
             left: 0;
             display: grid;
@@ -147,13 +278,45 @@
             letter-spacing: .12em;
         }
 
-        #mobile-menu a:last-child {
+        #mobile-menu > a:last-child {
             margin-top: .75rem;
             border: 0;
             border-radius: 999px;
             color: #fff;
             text-align: center;
             background: var(--adic-orange);
+        }
+
+        .mobile-brand__toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem .5rem;
+            border-bottom: 1px solid var(--adic-line);
+            color: var(--adic-ink);
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .mobile-brand__toggle svg {
+            width: 16px;
+            transition: transform .25s ease;
+        }
+
+        .mobile-brand__toggle[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+
+        .mobile-brand__panel {
+            padding: 0 .5rem .6rem;
+            background: var(--adic-blush);
+        }
+
+        .mobile-brand__panel a {
+            padding: .9rem .6rem !important;
+            border-bottom: 1px solid rgba(230, 72, 0, .15) !important;
         }
 
         .brand-banner {
@@ -249,6 +412,11 @@
             line-height: 2 !important;
             letter-spacing: 0 !important;
             text-align: center !important;
+        }
+
+        body > section:first-of-type .space-y-6 strong {
+            color: var(--adic-orange);
+            font-weight: 700;
         }
 
         body > section:nth-of-type(2) {
@@ -581,11 +749,25 @@
         }
 
         @media (max-width: 1279px) {
-            header .hidden.lg\:flex {
-                display: none !important;
+            .site-header__actions,
+            .site-header__nav {
+                display: none;
             }
 
-            header #menu-toggle {
+            .site-header__top {
+                min-height: 72px;
+                align-items: center;
+            }
+
+            .site-header__logo {
+                padding: .75rem 1.5rem;
+            }
+
+            .site-header__logo img {
+                width: 260px;
+            }
+
+            #menu-toggle {
                 display: block !important;
                 flex: 0 0 auto;
             }
@@ -599,21 +781,7 @@
             }
         }
 
-        @media (min-width: 1280px) {
-            header .hidden.lg\:flex {
-                display: flex !important;
-            }
-
-            header #menu-toggle {
-                display: none !important;
-            }
-        }
-
         @media (max-width: 767px) {
-            header > div {
-                min-height: 72px;
-            }
-
             #mobile-menu {
                 top: 72px;
             }
@@ -754,15 +922,13 @@
         }
 
         @media (max-width: 420px) {
-            header h1 {
-                font-size: 1.15rem !important;
+            .site-header__logo {
+                padding-right: .5rem;
+                padding-left: 1rem;
             }
 
-            header p {
-                max-width: 220px;
-                font-size: .48rem !important;
-                line-height: 1.5;
-                letter-spacing: .12em !important;
+            .site-header__logo img {
+                width: 225px;
             }
 
             .brand-banner img {
@@ -780,42 +946,71 @@
 <body>
 
     <!-- Header -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-[1200px] mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex flex-col">
-                <h1 class="text-xl font-bold tracking-tighter text-slate-900 leading-none">TOYO Corporation</h1>
-                <p class="text-[10px] tracking-widest text-gray-400 mt-1 uppercase font-sans">adic / Architect Design House</p>
-            </div>
-            
-            <div class="hidden lg:flex items-center space-x-8 text-[11px] font-sans font-bold tracking-wider">
-                <nav class="flex space-x-6 border-r border-gray-200 pr-8">
-                    <a href="#about" class="hover:text-amber-700 transition-colors">私たちについて</a>
-                    <a href="#concept" class="hover:text-amber-700 transition-colors">アディックとは</a>
-                    <a href="#properties" class="hover:text-amber-700 transition-colors">物件情報</a>
-                    <a href="#company" class="hover:text-amber-700 transition-colors">会社案内</a>
-                </nav>
-                <div class="flex items-center space-x-6">
-                    <div class="flex flex-col items-end">
-                        <span class="text-[9px] text-gray-400 leading-none mb-1 uppercase tracking-tighter">Free Dial</span>
-                        <a href="tel:0120296021" class="text-lg leading-none font-bold text-slate-800">0120-296-021</a>
-                    </div>
-                    <a href="#contact" class="bg-[#333] text-white px-6 py-3 rounded-sm text-[10px] hover:bg-slate-700 transition-all flex items-center">
-                        資料請求・お問い合わせ <i data-lucide="mail" class="ml-2 w-3.5 h-3.5"></i>
-                    </a>
-                </div>
+    <header class="site-header">
+        <div class="site-header__top">
+            <a class="site-header__logo" href="#" aria-label="東洋コーポレーション トップへ">
+                <img src="./logo-2026.jpg" alt="Building Better Future. TOYO Corporation">
+            </a>
+
+            <div class="site-header__actions">
+                <a class="site-header__phone" href="tel:0120296021">
+                    <strong>0120-296-021</strong>
+                    <span>営業時間 ｜ 9:30〜18:00<br>定休日　 ｜ 火・水</span>
+                </a>
+                <a class="site-header__contact" href="#contact">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    お問合せ
+                </a>
             </div>
 
-            <!-- Mobile Menu Toggle (Simplified for Embed) -->
-            <button class="lg:hidden" id="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
                 <i data-lucide="menu" id="menu-icon"></i>
             </button>
         </div>
+
+        <nav class="site-header__nav" aria-label="メインナビゲーション">
+            <a href="#about">私たちについて</a>
+            <div class="brand-switcher">
+                <button id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu-panel">
+                    住宅ブランド <i data-lucide="chevron-down"></i>
+                </button>
+                <div class="brand-switcher__panel" id="brand-menu-panel" hidden>
+                    <p>東洋コーポレーションのブランド</p>
+                    <a href="https://tevanore.ty-corp.jp/">
+                        <strong>Tevanore</strong>
+                        <span>中古住宅・リノベーション</span>
+                    </a>
+                    <a href="#about">
+                        <strong>adic</strong>
+                        <span>新築デザイナーズ住宅</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#properties">物件情報</a>
+            <a href="#concept">アディックとは</a>
+            <a href="#company">会社案内</a>
+        </nav>
     </header>
 
     <nav id="mobile-menu" aria-label="モバイルナビゲーション">
         <a href="#about">私たちについて</a>
-        <a href="#concept">アディックとは</a>
+        <div class="mobile-brand">
+            <button class="mobile-brand__toggle" id="mobile-brand-toggle" type="button" aria-expanded="false" aria-controls="mobile-brand-panel">
+                住宅ブランド <i data-lucide="chevron-down"></i>
+            </button>
+            <div class="mobile-brand__panel" id="mobile-brand-panel" hidden>
+                <a href="https://tevanore.ty-corp.jp/">
+                    <strong>Tevanore</strong>
+                    <span>中古住宅・リノベーション</span>
+                </a>
+                <a href="#about">
+                    <strong>adic</strong>
+                    <span>新築デザイナーズ住宅</span>
+                </a>
+            </div>
+        </div>
         <a href="#properties">物件情報</a>
+        <a href="#concept">アディックとは</a>
         <a href="#company">会社案内</a>
         <a href="#contact">資料請求・お問い合わせ</a>
     </nav>
@@ -829,21 +1024,21 @@
         <div class="max-w-[900px] mx-auto space-y-16 text-center md:text-left">
             <div class="space-y-8">
                 <div class="inline-block border-l-4 border-[#333] pl-6 text-left">
-                    <p class="text-sm tracking-[0.3em] text-gray-400 mb-2 font-sans">創業30周年！</p>
+                    <p class="text-sm tracking-[0.3em] text-gray-400 mb-2 font-sans">NEW-BUILD DESIGN HOUSE</p>
                     <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-                        新しい命を吹き込む、<br>
+                        新築だから叶う、<br>
                         アディックの邸宅設計。
                     </h2>
                 </div>
                 <div class="space-y-6 text-sm md:text-base leading-loose text-gray-600 font-sans tracking-widest text-left">
                     <p>
-                        アディック（adic）とは、Architect（建築家）、Design（デザイン）、
-                        Innovation（革新）、Construction（構築）の頭文字から生まれた住まいのブランドです。
+                        アディック（adic）は、東洋コーポレーションが手掛ける<br>
+                        <strong>新築デザイナーズ住宅ブランド</strong>です。
                     </p>
                     <p>
-                        創業30年以上の施工実績とノウハウで、品質への自信とメンテナンスへの責任を追求します。<br>
-                        その土地が持つ可能性を専門的な不動産・建築の技術で引き出し、
-                        新しい価値を吹き込んだ住まいを適正価格で提供します。
+                        中古住宅を再生する「テバノーレ」に対し、アディックは土地の個性から新しい住まいを一から設計。<br>
+                        創業30年以上の施工実績と不動産・建築の技術を生かし、
+                        デザイン性と暮らしやすさを備えた新築住宅を適正価格で提供します。
                     </p>
                 </div>
             </div>
@@ -1230,6 +1425,38 @@
             }
         }
 
+        // 住宅ブランドメニュー（デスクトップ）
+        const brandMenuToggle = document.getElementById('brand-menu-toggle');
+        const brandMenuPanel = document.getElementById('brand-menu-panel');
+
+        const closeBrandMenu = () => {
+            brandMenuPanel.hidden = true;
+            brandMenuToggle.setAttribute('aria-expanded', 'false');
+        };
+
+        brandMenuToggle.addEventListener('click', () => {
+            const willOpen = brandMenuPanel.hidden;
+            brandMenuPanel.hidden = !willOpen;
+            brandMenuToggle.setAttribute('aria-expanded', String(willOpen));
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.brand-switcher')) closeBrandMenu();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeBrandMenu();
+        });
+
+        // 住宅ブランドメニュー（モバイル）
+        const mobileBrandToggle = document.getElementById('mobile-brand-toggle');
+        const mobileBrandPanel = document.getElementById('mobile-brand-panel');
+        mobileBrandToggle.addEventListener('click', () => {
+            const willOpen = mobileBrandPanel.hidden;
+            mobileBrandPanel.hidden = !willOpen;
+            mobileBrandToggle.setAttribute('aria-expanded', String(willOpen));
+        });
+
         // モバイルメニューのトグル（簡易版）
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1244,6 +1471,8 @@
         mobileMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('is-open');
+                mobileBrandPanel.hidden = true;
+                mobileBrandToggle.setAttribute('aria-expanded', 'false');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 menuToggle.setAttribute('aria-label', 'メニューを開く');
                 document.getElementById('menu-icon').setAttribute('data-lucide', 'menu');
