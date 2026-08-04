@@ -327,13 +327,51 @@
             background: var(--adic-ink);
         }
 
+        .brand-banner::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(20, 24, 28, .3), rgba(20, 24, 28, .1) 50%, rgba(20, 24, 28, .3));
+        }
+
         .brand-banner img {
             display: block;
             width: 100%;
-            height: auto;
-            min-height: 150px;
+            height: clamp(280px, 31vw, 520px);
             object-fit: cover;
-            object-position: center;
+            object-position: center 58%;
+        }
+
+        .brand-banner__copy {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            width: min(92%, 1000px);
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 3px 20px rgba(0, 0, 0, .65);
+            transform: translate(-50%, -50%);
+        }
+
+        .brand-banner__copy h1 {
+            font-size: clamp(2rem, 4.2vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: .04em;
+            line-height: 1.25;
+        }
+
+        .brand-banner__copy h1 span {
+            font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+            font-weight: 500;
+        }
+
+        .brand-banner__copy p {
+            margin-top: .65rem;
+            font-size: clamp(.85rem, 1.35vw, 1.25rem);
+            font-weight: 700;
+            letter-spacing: .12em;
         }
 
         body > section:first-of-type {
@@ -1023,8 +1061,12 @@
         <a href="https://www.ty-corp.jp/ipo/">上場のご報告</a>
     </nav>
 
-    <figure class="brand-banner" aria-label="adicブランド">
-        <img src="./mv-pc.png" alt="BRAND ブランド">
+    <figure class="brand-banner" aria-labelledby="adic-fv-title">
+        <img src="./adic-hero-v2.png" alt="モダンな新築デザイナーズ住宅の外観">
+        <figcaption class="brand-banner__copy">
+            <h1 id="adic-fv-title">アディック <span>〜ADIC〜</span></h1>
+            <p>新築デザイナーズ住宅</p>
+        </figcaption>
     </figure>
 
     <!-- Brand Identity (Vertical Layout) -->

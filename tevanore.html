@@ -44,6 +44,63 @@
           color: #e64800;
           font-weight: 700;
         }
+
+        .mainvisual.brand-fv {
+          position: relative;
+          height: clamp(280px, 31vw, 520px);
+          overflow: hidden;
+          background: #383838;
+        }
+
+        .mainvisual.brand-fv::after {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          inset: 0;
+          background: linear-gradient(90deg, rgba(30, 24, 20, .34), rgba(30, 24, 20, .08) 50%, rgba(30, 24, 20, .34));
+        }
+
+        .mainvisual.brand-fv > img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .brand-fv__copy {
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          width: min(92%, 1000px);
+          color: #fff;
+          text-align: center;
+          text-shadow: 0 3px 20px rgba(0, 0, 0, .65);
+          transform: translate(-50%, -50%);
+        }
+
+        .brand-fv__copy h1 {
+          margin: 0;
+          color: #fff;
+          font-family: 'Noto Sans JP', sans-serif;
+          font-size: clamp(2rem, 4.2vw, 4.5rem);
+          font-weight: 700;
+          letter-spacing: .04em;
+          line-height: 1.25;
+        }
+
+        .brand-fv__copy h1 span {
+          font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+          font-weight: 500;
+        }
+
+        .brand-fv__copy p {
+          margin-top: .65rem;
+          font-size: clamp(.85rem, 1.35vw, 1.25rem);
+          font-weight: 700;
+          letter-spacing: .12em;
+        }
       </style>
 
     	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
@@ -225,13 +282,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     </div>
   </header>
   <main>
-<div class="mainvisual">
-  <h1>
-    <picture>
-      <source srcset="https://tevanore.ty-corp.jp/wp-content/themes/tevanore/images/index/mv-sp.png" media="(max-width: 575px)">
-      <img src="https://tevanore.ty-corp.jp/wp-content/themes/tevanore/images/index/mv-pc.png" alt="ブランド">
-    </picture>
-  </h1>
+<div class="mainvisual brand-fv">
+  <img src="./tevanore-hero-v2.png" alt="リノベーションされた明るい中古住宅のリビング">
+  <div class="brand-fv__copy">
+    <h1>テバノーレ <span>〜Tevanore〜</span></h1>
+    <p>中古住宅・リノベーション</p>
+  </div>
 </div>
 
 <section class="contents sec-1">
