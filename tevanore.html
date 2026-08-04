@@ -47,7 +47,7 @@
 
         .mainvisual.brand-fv {
           position: relative;
-          height: clamp(280px, 31vw, 520px);
+          height: clamp(180px, 10.7vw, 220px);
           overflow: hidden;
           background: #383838;
         }
@@ -100,6 +100,110 @@
           font-size: clamp(.85rem, 1.35vw, 1.25rem);
           font-weight: 700;
           letter-spacing: .12em;
+        }
+
+        .gnavi .brand-nav {
+          position: relative;
+        }
+
+        .gnavi .brand-nav details,
+        .gnavi .brand-nav summary {
+          width: 100%;
+          height: 100%;
+        }
+
+        .gnavi .brand-nav summary {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: .55rem;
+          padding: 0 .5rem;
+          color: #383838;
+          font-weight: 700;
+          list-style: none;
+          cursor: pointer;
+        }
+
+        .gnavi .brand-nav summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .gnavi .brand-nav summary::after {
+          content: '⌄';
+          color: #e64800;
+          font-size: .85em;
+          transition: transform .2s ease;
+        }
+
+        .gnavi .brand-nav details[open] summary::after {
+          transform: rotate(180deg);
+        }
+
+        .brand-nav__panel {
+          position: absolute;
+          z-index: 100;
+          top: 100%;
+          left: 50%;
+          width: 420px;
+          padding: 1rem;
+          background: #fff;
+          box-shadow: 0 18px 38px rgba(56, 56, 56, .18);
+          transform: translateX(-50%);
+        }
+
+        .brand-nav__panel > p {
+          margin: 0 0 .65rem;
+          color: #707070;
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: .1em;
+        }
+
+        .gnavi .brand-nav .brand-nav__panel a {
+          display: grid;
+          height: auto;
+          grid-template-columns: 105px 1fr;
+          align-items: center;
+          padding: .9rem;
+          border-top: 1px solid #e0e0e0;
+          text-align: left;
+        }
+
+        .brand-nav__panel a strong {
+          color: #e64800;
+          font-family: 'Oswald', sans-serif;
+          font-size: 18px;
+          letter-spacing: .08em;
+        }
+
+        .brand-nav__panel a span {
+          color: #383838;
+          font-size: 12px;
+          font-weight: 700;
+        }
+
+        @media (max-width: 767px) {
+          .mainvisual.brand-fv {
+            height: 150px;
+          }
+
+          .brand-fv__copy h1 {
+            font-size: 1.75rem;
+          }
+
+          .sp-nav .brand-nav summary {
+            min-height: 54px;
+            padding: .75rem 1rem;
+          }
+
+          .sp-nav .brand-nav__panel {
+            position: static;
+            width: 100%;
+            padding: .5rem 1rem 1rem;
+            background: #fff5f0;
+            box-shadow: none;
+            transform: none;
+          }
         }
       </style>
 
@@ -218,8 +322,15 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     <li>
       <a href="https://www.ty-corp.jp/about-us/">私たちについて</a>
     </li>
-    <li>
-      <a href="https://tevanore.ty-corp.jp/">テバノーレとは</a>
+    <li class="brand-nav">
+      <details>
+        <summary>住宅ブランド</summary>
+        <div class="brand-nav__panel">
+          <p>東洋コーポレーションのブランド</p>
+          <a href="./tevanore.html"><strong>TEVANORE</strong><span>中古住宅・リノベーション</span></a>
+          <a href="./index.html"><strong>ADIC</strong><span>新築デザイナーズ住宅</span></a>
+        </div>
+      </details>
     </li>
     <li>
       <a href="https://tevanore.ty-corp.jp/property">物件情報</a>
@@ -254,8 +365,15 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
     <li>
       <a href="https://www.ty-corp.jp/about-us/">私たちについて</a>
     </li>
-    <li>
-      <a href="https://tevanore.ty-corp.jp/">テバノーレとは</a>
+    <li class="brand-nav">
+      <details>
+        <summary>住宅ブランド</summary>
+        <div class="brand-nav__panel">
+          <p>東洋コーポレーションのブランド</p>
+          <a href="./tevanore.html"><strong>TEVANORE</strong><span>中古住宅・リノベーション</span></a>
+          <a href="./index.html"><strong>ADIC</strong><span>新築デザイナーズ住宅</span></a>
+        </div>
+      </details>
     </li>
     <li>
       <a href="https://tevanore.ty-corp.jp/property">物件情報</a>
